@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>T7 — Seven Ways to Feel Like Yourself</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #fff; color: #1a1a1a; font-family: 'Inter', sans-serif; }
+  .lp { max-width: 680px; margin: 0 auto; padding: 0 16px; }
+
+  /* Hero */
+  .lp-hero { text-align: center; padding: 3rem 1rem 2rem; border-bottom: 1px solid #e8e8e8; }
+  .lp-eyebrow { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #999; margin-bottom: 1.2rem; }
+  .lp-tagline { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 300; line-height: 1.25; color: #1a1a1a; margin: 0 0 1rem; }
+  .lp-tagline em { font-style: italic; }
+  .lp-sub { font-size: 14px; color: #555; line-height: 1.7; max-width: 420px; margin: 0 auto 0.5rem; }
+  .lp-brand { font-size: 13px; color: #999; margin: 0 auto 2rem; }
+  .lp-badge { display: inline-block; font-size: 11px; letter-spacing: 0.1em; padding: 6px 16px; border: 1px solid #ddd; border-radius: 100px; color: #888; }
+
+  /* Section */
+  .lp-section { padding: 2.5rem 1rem; border-bottom: 1px solid #e8e8e8; }
+  .lp-section-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #999; margin-bottom: 1.5rem; text-align: center; }
+
+  /* Circle */
+  .circle-wrap { position: relative; width: 320px; height: 320px; margin: 0 auto; }
+  .circle-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; pointer-events: none; }
+  .circle-center-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: #1a1a1a; margin: 0; }
+  .circle-center-sub { font-size: 11px; color: #999; letter-spacing: 0.1em; margin: 4px 0 0; }
+  .sku-node { position: absolute; width: 72px; text-align: center; transform: translate(-50%, -50%); cursor: pointer; }
+  .sku-circle { width: 52px; height: 52px; border-radius: 50%; margin: 0 auto 6px; display: flex; align-items: center; justify-content: center; border: 1px solid transparent; transition: transform 0.15s; }
+  .sku-node:hover .sku-circle { transform: scale(1.08); }
+  .sku-kanji { font-size: 18px; font-weight: 500; line-height: 1; }
+  .sku-en-small { font-family: 'Cormorant Garamond', serif; font-size: 10px; font-style: italic; color: #888; margin: 2px 0 0; line-height: 1.2; }
+  .detail-box { background: #f7f7f5; border-radius: 12px; padding: 1rem 1.25rem; margin-top: 1.5rem; border: 1px solid #eee; min-height: 80px; text-align: center; }
+  .detail-kanji { font-size: 20px; font-weight: 500; margin: 0 0 2px; }
+  .detail-en { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-style: italic; color: #888; margin: 0 0 6px; }
+  .detail-scene { font-size: 13px; color: #999; line-height: 1.6; margin: 0; }
+
+  /* Benefits */
+  .benefit-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .benefit-item { text-align: center; }
+  .benefit-icon { font-size: 24px; margin-bottom: 8px; color: #888; }
+  .benefit-title { font-size: 13px; font-weight: 500; color: #1a1a1a; margin: 0 0 4px; }
+  .benefit-desc { font-size: 12px; color: #999; line-height: 1.5; margin: 0; }
+
+  /* Tiers */
+  .tier-list { display: flex; flex-direction: column; gap: 10px; }
+  .tier-row { display: flex; align-items: center; gap: 16px; background: #f7f7f5; border-radius: 8px; padding: 0.75rem 1rem; border: 1px solid #eee; }
+  .tier-months { font-size: 13px; font-weight: 500; color: #1a1a1a; min-width: 80px; }
+  .tier-arrow { color: #ccc; font-size: 14px; }
+  .tier-gift { font-size: 13px; color: #555; }
+  .tier-note { font-size: 11px; color: #bbb; margin-top: 12px; }
+
+  /* CTA */
+  .cta-block { text-align: center; padding: 2.5rem 1rem; }
+  .cta-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; color: #1a1a1a; margin: 0 0 0.5rem; }
+  .cta-sub { font-size: 13px; color: #999; margin: 0 0 1.5rem; }
+  .cta-form { display: flex; gap: 8px; max-width: 380px; margin: 0 auto; }
+  .cta-form input { flex: 1; font-size: 14px; padding: 10px 14px; border: 1px solid #ddd; border-radius: 8px; background: #fff; color: #1a1a1a; outline: none; font-family: 'Inter', sans-serif; }
+  .cta-form input:focus { border-color: #aaa; }
+  .cta-btn { font-size: 13px; padding: 10px 18px; border: 1px solid #ddd; border-radius: 8px; background: #fff; color: #1a1a1a; cursor: pointer; white-space: nowrap; font-family: 'Inter', sans-serif; }
+  .cta-btn:hover { background: #f7f7f5; }
+  .cta-note { font-size: 11px; color: #bbb; margin-top: 12px; }
+  .price-pill { display: inline-block; font-size: 12px; padding: 4px 14px; border: 1px solid #ddd; border-radius: 100px; color: #999; margin-top: 1rem; }
+
+  @media (max-width: 480px) {
+    .lp-tagline { font-size: 28px; }
+    .benefit-row { grid-template-columns: 1fr; gap: 20px; }
+    .cta-form { flex-direction: column; }
+    .circle-wrap { width: 280px; height: 280px; }
+  }
+</style>
+</head>
+<body>
+<div class="lp">
+
+  <div class="lp-hero">
+    <p class="lp-eyebrow">T7 — Seven Ways to Feel Like Yourself</p>
+    <h1 class="lp-tagline">毎日の一杯に、<br><em>自分のための時間を。</em></h1>
+    <p class="lp-sub">東洋の養生哲学と、体と心の7つの状態に寄り添う。</p>
+    <p class="lp-brand">フレーバーティーブランド</p>
+    <span class="lp-badge">近日公開</span>
+  </div>
+
+  <div class="lp-section">
+    <p class="lp-section-label">7種のラインナップ — 7日間、7つの自分へ</p>
+    <div class="circle-wrap" id="circleWrap">
+      <svg style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;">
+        <circle cx="160" cy="160" r="110" fill="none" stroke="#e8e8e8" stroke-width="1" stroke-dasharray="4 6"/>
+      </svg>
+      <div class="circle-center">
+        <p class="circle-center-title">T7</p>
+        <p class="circle-center-sub">7 days · 7 teas</p>
+      </div>
+    </div>
+    <div class="detail-box" id="detailBox">
+      <p style="font-size:12px;color:#bbb;margin:0;padding-top:12px;">お茶をタップすると詳細が表示されます</p>
+    </div>
+  </div>
+
+  <div class="lp-section">
+    <p class="lp-section-label" style="text-align:left;">定期便について</p>
+    <div class="benefit-row">
+      <div class="benefit-item">
+        <div class="benefit-icon">📦</div>
+        <p class="benefit-title">月1回お届け</p>
+        <p class="benefit-desc">30g入り（約15日分）<br>種類は毎回変更可</p>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🚚</div>
+        <p class="benefit-title">送料込み</p>
+        <p class="benefit-desc">月額¥2,000<br>いつでも解約OK</p>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🎁</div>
+        <p class="benefit-title">継続特典あり</p>
+        <p class="benefit-desc">定期便だけが<br>手に入る雑貨</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="lp-section">
+    <p class="lp-section-label" style="text-align:left;">継続特典（定期便契約者限定）</p>
+    <div class="tier-list">
+      <div class="tier-row">
+        <span class="tier-months">3ヶ月継続</span>
+        <span class="tier-arrow">→</span>
+        <span class="tier-gift">好きな柄のマグカップ</span>
+      </div>
+      <div class="tier-row">
+        <span class="tier-months">6ヶ月継続</span>
+        <span class="tier-arrow">→</span>
+        <span class="tier-gift">好きな柄の保温水筒（300ml）</span>
+      </div>
+      <div class="tier-row">
+        <span class="tier-months">9ヶ月継続</span>
+        <span class="tier-arrow">→</span>
+        <span class="tier-gift">ガラスポット</span>
+      </div>
+    </div>
+    <p class="tier-note">※水筒・マグカップ・ガラスポットは定期便契約者のみ入手可能です。</p>
+  </div>
+
+  <div class="cta-block">
+    <h2 class="cta-title">発売をお知らせします</h2>
+    <p class="cta-sub">メールアドレスをご登録ください。公開時にいち早くご案内します。</p>
+    <div class="cta-form">
+      <input type="email" placeholder="your@email.com" />
+      <button class="cta-btn">登録する</button>
+    </div>
+    <p class="cta-note">スパムメールは送りません。配信停止はいつでも可能です。</p>
+    <p class="price-pill">定期便 ¥2,000/月（送料込み）· 近日公開</p>
+  </div>
+
+</div>
+
+<script>
+const skus = [
+  { kanji:'明', en:'Bright Eyes', scene:'スマホやPCの毎日に、澄んだひと息を', color:'#4A9B8E', day:'月曜日' },
+  { kanji:'醒', en:'Fresh Awake', scene:'気分を切り替えたい時に、すっと冴える', color:'#C9A84C', day:'火曜日' },
+  { kanji:'巡', en:'Smooth Flow', scene:'毎日のリズムを、やさしく整える', color:'#8B7EC8', day:'水曜日' },
+  { kanji:'温', en:'Warm Comfort', scene:'体の芯からほっと温まる一杯', color:'#C85C5C', day:'木曜日' },
+  { kanji:'潤', en:'Moist & Soothe', scene:'乾燥が気になる季節に、やさしい潤いを', color:'#5BA3C9', day:'金曜日' },
+  { kanji:'守', en:'Immune Guard', scene:'季節の変わり目に、そっと寄り添う', color:'#5B9E5B', day:'土曜日' },
+  { kanji:'眠', en:'Deep Rest', scene:'夜のくつろぎ時間に寄り添う', color:'#6B8EC9', day:'日曜日' },
+];
+
+const wrap = document.getElementById('circleWrap');
+const detail = document.getElementById('detailBox');
+const size = wrap.offsetWidth || 320;
+const cx = size / 2, cy = size / 2, r = size * 0.344;
+
+skus.forEach((s, i) => {
+  const angle = (i / 7) * 2 * Math.PI - Math.PI / 2;
+  const x = cx + r * Math.cos(angle);
+  const y = cy + r * Math.sin(angle);
+  const node = document.createElement('div');
+  node.className = 'sku-node';
+  node.style.left = x + 'px';
+  node.style.top = y + 'px';
+  node.innerHTML = `
+    <div class="sku-circle" style="background:${s.color}18;border-color:${s.color}44;">
+      <span class="sku-kanji" style="color:${s.color};">${s.kanji}</span>
+    </div>
+    <p class="sku-en-small">${s.en}</p>
+  `;
+  node.addEventListener('click', () => {
+    detail.innerHTML = `
+      <p class="detail-kanji" style="color:${s.color};">${s.kanji} <span style="font-size:13px;color:#bbb;font-weight:400;">${s.day}</span></p>
+      <p class="detail-en">${s.en}</p>
+      <p class="detail-scene">${s.scene}</p>
+    `;
+    document.querySelectorAll('.sku-circle').forEach(c => c.style.transform = '');
+    node.querySelector('.sku-circle').style.transform = 'scale(1.12)';
+  });
+  wrap.appendChild(node);
+});
+</script>
+</body>
+</html>
