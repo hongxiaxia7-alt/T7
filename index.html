@@ -11,7 +11,6 @@
   body { background: #fff; color: #1a1a1a; font-family: 'Inter', sans-serif; }
   .lp { max-width: 680px; margin: 0 auto; padding: 0 16px; }
 
-  /* Hero */
   .lp-hero { text-align: center; padding: 3rem 1rem 2rem; border-bottom: 1px solid #e8e8e8; }
   .lp-eyebrow { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #999; margin-bottom: 1.2rem; }
   .lp-tagline { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 300; line-height: 1.25; color: #1a1a1a; margin: 0 0 1rem; }
@@ -20,12 +19,12 @@
   .lp-brand { font-size: 13px; color: #999; margin: 0 auto 2rem; }
   .lp-badge { display: inline-block; font-size: 11px; letter-spacing: 0.1em; padding: 6px 16px; border: 1px solid #ddd; border-radius: 100px; color: #888; }
 
-  /* Section */
   .lp-section { padding: 2.5rem 1rem; border-bottom: 1px solid #e8e8e8; }
   .lp-section-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #999; margin-bottom: 1.5rem; text-align: center; }
 
-  /* Circle */
-  .circle-wrap { position: relative; width: 320px; height: 320px; margin: 0 auto; }
+  .cans-image { width: 100%; max-width: 600px; display: block; margin: 0 auto; border-radius: 12px; }
+
+  .circle-wrap { position: relative; width: 320px; height: 320px; margin: 2rem auto 0; }
   .circle-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; pointer-events: none; }
   .circle-center-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: #1a1a1a; margin: 0; }
   .circle-center-sub { font-size: 11px; color: #999; letter-spacing: 0.1em; margin: 4px 0 0; }
@@ -39,14 +38,12 @@
   .detail-en { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-style: italic; color: #888; margin: 0 0 6px; }
   .detail-scene { font-size: 13px; color: #999; line-height: 1.6; margin: 0; }
 
-  /* Benefits */
   .benefit-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
   .benefit-item { text-align: center; }
   .benefit-icon { font-size: 24px; margin-bottom: 8px; color: #888; }
   .benefit-title { font-size: 13px; font-weight: 500; color: #1a1a1a; margin: 0 0 4px; }
   .benefit-desc { font-size: 12px; color: #999; line-height: 1.5; margin: 0; }
 
-  /* Tiers */
   .tier-list { display: flex; flex-direction: column; gap: 10px; }
   .tier-row { display: flex; align-items: center; gap: 16px; background: #f7f7f5; border-radius: 8px; padding: 0.75rem 1rem; border: 1px solid #eee; }
   .tier-months { font-size: 13px; font-weight: 500; color: #1a1a1a; min-width: 80px; }
@@ -54,7 +51,6 @@
   .tier-gift { font-size: 13px; color: #555; }
   .tier-note { font-size: 11px; color: #bbb; margin-top: 12px; }
 
-  /* CTA */
   .cta-block { text-align: center; padding: 2.5rem 1rem; }
   .cta-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; color: #1a1a1a; margin: 0 0 0.5rem; }
   .cta-sub { font-size: 13px; color: #999; margin: 0 0 1.5rem; }
@@ -87,6 +83,11 @@
 
   <div class="lp-section">
     <p class="lp-section-label">7種のラインナップ — 7日間、7つの自分へ</p>
+    <img
+      src="https://raw.githubusercontent.com/hongxiaxia7-alt/T7/main/cans.png"
+      alt="T7 7種の缶デザイン"
+      class="cans-image"
+    />
     <div class="circle-wrap" id="circleWrap">
       <svg style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;">
         <circle cx="160" cy="160" r="110" fill="none" stroke="#e8e8e8" stroke-width="1" stroke-dasharray="4 6"/>
@@ -128,20 +129,10 @@
       <div class="tier-row">
         <span class="tier-months">3ヶ月継続</span>
         <span class="tier-arrow">→</span>
-        <span class="tier-gift">好きな柄のマグカップ</span>
-      </div>
-      <div class="tier-row">
-        <span class="tier-months">6ヶ月継続</span>
-        <span class="tier-arrow">→</span>
-        <span class="tier-gift">好きな柄の保温水筒（300ml）</span>
-      </div>
-      <div class="tier-row">
-        <span class="tier-months">9ヶ月継続</span>
-        <span class="tier-arrow">→</span>
-        <span class="tier-gift">ガラスポット</span>
+        <span class="tier-gift">保温水筒300ml を¥1,000で購入可</span>
       </div>
     </div>
-    <p class="tier-note">※水筒・マグカップ・ガラスポットは定期便契約者のみ入手可能です。</p>
+    <p class="tier-note">※水筒は定期便契約者のみ購入可能です。通常単体価格¥2,900。</p>
   </div>
 
   <div class="cta-block">
@@ -159,19 +150,19 @@
 
 <script>
 const skus = [
-  { kanji:'明', en:'Bright Eyes', scene:'スマホやPCの毎日に、澄んだひと息を', color:'#4A9B8E', day:'月曜日' },
-  { kanji:'醒', en:'Fresh Awake', scene:'気分を切り替えたい時に、すっと冴える', color:'#C9A84C', day:'火曜日' },
-  { kanji:'巡', en:'Smooth Flow', scene:'毎日のリズムを、やさしく整える', color:'#8B7EC8', day:'水曜日' },
-  { kanji:'温', en:'Warm Comfort', scene:'体の芯からほっと温まる一杯', color:'#C85C5C', day:'木曜日' },
-  { kanji:'潤', en:'Moist & Soothe', scene:'乾燥が気になる季節に、やさしい潤いを', color:'#5BA3C9', day:'金曜日' },
-  { kanji:'守', en:'Immune Guard', scene:'季節の変わり目に、そっと寄り添う', color:'#5B9E5B', day:'土曜日' },
-  { kanji:'眠', en:'Deep Rest', scene:'夜のくつろぎ時間に寄り添う', color:'#6B8EC9', day:'日曜日' },
+  { kanji:'明', en:'Crystal Gaze', scene:'スマホやPCの毎日に、澄んだ眼差しを。', color:'#C4849A', day:'月曜日' },
+  { kanji:'醒', en:'First Light', scene:'気分を切り替えたい時に、すっと冴える。', color:'#6B8BAE', day:'火曜日' },
+  { kanji:'巡', en:'Gentle Current', scene:'毎日のリズムを、やさしく整える。', color:'#6B7A8D', day:'水曜日' },
+  { kanji:'温', en:'Quiet Ember', scene:'体の芯からほっと温まる一杯。', color:'#B87355', day:'木曜日' },
+  { kanji:'潤', en:'Petal Mist', scene:'乾燥が気になる季節に、やさしい潤いを。', color:'#A8A49C', day:'金曜日' },
+  { kanji:'守', en:"Season's Grace", scene:'季節の変わり目に、そっと寄り添う。', color:'#A85C5C', day:'土曜日' },
+  { kanji:'眠', en:'Moonlit Calm', scene:'夜のくつろぎ時間に寄り添う。', color:'#7A9E87', day:'日曜日' },
 ];
 
 const wrap = document.getElementById('circleWrap');
 const detail = document.getElementById('detailBox');
 const size = wrap.offsetWidth || 320;
-const cx = size / 2, cy = size / 2, r = size * 0.344;
+const cx = size/2, cy = size/2, r = size * 0.344;
 
 skus.forEach((s, i) => {
   const angle = (i / 7) * 2 * Math.PI - Math.PI / 2;
