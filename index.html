@@ -15,7 +15,7 @@
   .lp-eyebrow { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #999; margin-bottom: 1.2rem; }
   .lp-tagline { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 300; line-height: 1.25; color: #1a1a1a; margin: 0 0 1rem; }
   .lp-tagline em { font-style: italic; }
-  .lp-sub { font-size: 14px; color: #555; line-height: 1.7; max-width: 420px; margin: 0 auto 0.5rem; }
+  .lp-sub { font-size: 14px; color: #555; line-height: 1.7; max-width: 420px; margin: 0 auto 0.5rem; word-break: keep-all; }
   .lp-brand { font-size: 13px; color: #999; margin: 0 auto 2rem; }
   .lp-badge { display: inline-block; font-size: 11px; letter-spacing: 0.1em; padding: 6px 16px; border: 1px solid #ddd; border-radius: 100px; color: #888; }
 
@@ -25,7 +25,7 @@
   .full-image { width: 100%; max-width: 600px; display: block; margin: 0 auto; border-radius: 12px; }
 
   .gift-info { text-align: center; margin-top: 1.5rem; }
-  .gift-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; color: #1a1a1a; margin: 0 0 0.5rem; }
+  .gift-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; color: #1a1a1a; margin: 0 0 0.5rem; word-break: keep-all; }
   .gift-title em { font-style: italic; }
   .gift-desc { font-size: 13px; color: #777; line-height: 1.7; margin: 0 0 1rem; max-width: 520px; margin-left: auto; margin-right: auto; }
   .gift-price { display: inline-block; font-size: 18px; font-weight: 500; color: #1a1a1a; border-bottom: 1px solid #ccc; padding-bottom: 4px; }
@@ -74,6 +74,8 @@
 
   @media (max-width: 480px) {
     .lp-tagline { font-size: 28px; }
+    .gift-title { font-size: 22px; }
+    .lp-sub { font-size: 13px; }
     .benefit-row { grid-template-columns: 1fr; gap: 20px; }
     .cta-form { flex-direction: column; }
     .circle-wrap { width: 280px; height: 280px; }
@@ -102,7 +104,7 @@
     />
     <div class="gift-info">
       <h2 class="gift-title">7種の出会い、<em>ひとつの贈りもの。</em></h2>
-      <p class="gift-desc">体と心の7つの状態にそれぞれ寄り添う、フレーバーティーを一箱に。<br>はじめての方に、大切な方への贈りものに。</p>
+      <p class="gift-desc">体と心の7つの状態にそれぞれ寄り添う、<br>フレーバーティーを一箱に。<br>はじめての方に、大切な方への贈りものに。</p>
       <p class="gift-price">¥1,900<span>（税込・送料別）</span></p>
     </div>
   </div>
@@ -175,7 +177,7 @@
   <!-- CTA -->
   <div class="cta-block">
     <h2 class="cta-title">発売をお知らせします</h2>
-    <p class="cta-sub">メールアドレスをご登録ください。公開時にいち早くご案内します。</p>
+    <p class="cta-sub">メールアドレスをご登録ください。<br>公開時にいち早くご案内します。</p>
     <div class="cta-form">
       <input type="email" placeholder="your@email.com" />
       <button class="cta-btn">登録する</button>
